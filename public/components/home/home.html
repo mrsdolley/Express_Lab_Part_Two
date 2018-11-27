@@ -1,0 +1,20 @@
+<!-- <h1>HTML is working at least.</h1> -->
+<form ng-submit="$ctrl.postData($ctrl.addItem);">
+  
+  <input type="text" placeholder="Product" ng-model="$ctrl.addItem.product">
+  <input type="text" placeholder="Price" ng-model="$ctrl.addItem.price">
+  <input type="text" placeholder="Quantity" ng-model="$ctrl.addItem.quantity">
+  <button>Add New Item</button>
+</form>
+
+
+<section ng-repeat="item in $ctrl.items">
+  
+  <input class="edit_input" type="text" ng-blur="$ctrl.updateItem(item);" ng-model="item.product">
+  
+  <input class="edit_input" type="text" ng-blur="$ctrl.updateItem(item);" ng-model="item.price">
+ 
+  <input class="edit_input" type="text" ng-blur="$ctrl.updateItem(item);" ng-model="item.quantity">
+  
+  <button ng-click="$ctrl.removeItem(item.id);">X</button>
+</section>
